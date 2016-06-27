@@ -1,0 +1,24 @@
+/* bower .css/.less goes here (no min).*/
+@import "bower_components/bootstrap/less/bootstrap.less";
+@import (less) "bower_components/angular-loading-bar/build/loading-bar.css";
+@import "bower_components/font-awesome/less/font-awesome.less";
+@import "bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.less";
+
+//Theme
+@import "Supernice.less";
+
+//Font paths
+@fa-font-path: "fonts";
+@icon-font-path: "fonts/";
+
+/* Component LESS files go here.*/
+@import "view/milestones/milestones.less";
+@import "view/addMilestone/addMilestone.less";
+/* Add Component LESS Above */
+
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.main {
+    padding-top: 16px;
+}
