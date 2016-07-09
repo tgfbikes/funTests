@@ -21,9 +21,12 @@ angular.module('int1')
 	}).controller('AddMilestoneCtrl', function ($scope, $uibModalInstance) {
         var vm = this;
         
-        // vm.save = function(){
+        vm.saveMilestone = saveMilestone;
+			
+		function saveMilestone () {
+			console.log('saveMilestone');
         //     $uibModalInstance.close(result);
-        // }
+        }
         
         var destroy = $scope.$on("$destroy", function () {
             //Cleanup anything that would persist beyond destruction, including $on/$watch
