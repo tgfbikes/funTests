@@ -29,8 +29,16 @@ angular.module('int1')
     var vm = this;
 
     vm.name = '';
-    vm.date = '';
+  	vm.date = '';
+  	vm.opened = false;
     vm.saveMilestone = saveMilestone;
+    vm.openDatePopUp = openDatePopUp;
+    vm.dateOptions = {
+        formatYear: 'yy',
+        maxDate: new Date(2020, 5, 22),
+        minDate: new Date(),
+        startingDay: 1
+    };
 
     function saveMilestone () {
       if (vm.name && vm.date) {
@@ -38,6 +46,10 @@ angular.module('int1')
           // $uibModalInstance.close();
       }
     }
+	  
+  	function openDatePopUp () {
+      vm.opened = true;
+	}
 
     var destroy = $scope.$on("$destroy", function () {
       //Cleanup anything that would persist beyond destruction, including $on/$watch
