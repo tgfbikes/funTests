@@ -22,6 +22,18 @@
           <h4>No milestones have been defined.</h4>
         </div>
       </div>
+      <div ng-show="vm.milestones.length">
+        <div class="col-md-12">
+          <table class="table">
+            <tbody>
+              <tr ng-repeat="milestone in vm.milestones">
+                <td>{{milestone.name}}</td>
+                <td>{{milestone.date}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 	</div>
   </div>
 </div>
