@@ -1,13 +1,16 @@
 <div class="int1-add-milestone">
 	<div class="modal-header">
 		<button type="button" class="close pull-right" ng-click="$dismiss()" aria-hidden="true">&times;</button>
-		<h4 class="modal-title">Modal title</h4>
+		<h4 class="modal-title">Add a Milestone</h4>
 	</div>
 	<div class="modal-body">
-		<p>Body&hellip;</p>
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" placeholder="Milestone Name">
+			<label for="date">Date</label>
+			<input type="text" class="form-control" id="date" placeholder="Date">
 	</div>
 	<div class="modal-footer">
 		<button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
-		<button type="button" class="btn btn-primary">Save changes</button>
+		<button type="button" class="btn btn-primary" ng-click="vm.saveMilestone()">Save changes</button>
 	</div>
 </div>
