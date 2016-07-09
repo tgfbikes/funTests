@@ -8,12 +8,20 @@ angular.module('int1').config(function($stateProvider, $urlRouterProvider) {
 
 }).controller('MilestonesCtrl', ['$scope', 'addMilestone', 'milestoneService', function ($scope, addMilestone, milestoneService) {
     var vm = this;
+	vm.orderBySelect = 'Date';
+	vm.orderBy = 'date';
 	vm.milestones = milestoneService.getAllMilestones();
 	vm.openModal = openModal;
+	vm.updateOrder = updateOrder;
 
 
-	function openModal() {
+	function openModal () {
       var modalInstance = addMilestone.open();
+	}
+	
+	function updateOrder (orderBy) {
+		vm.orderBy = orderBy;
+		orderBy === 'date' ? vm.orderBySelect = 'Date' : vm.orderBySelect = 'Name';
 	}
 
     var destroy = $scope.$on("$destroy", function () {
