@@ -14,9 +14,8 @@ angular.module('int1').config(function($stateProvider, $urlRouterProvider) {
 	vm.openModal = openModal;
 	vm.updateOrder = updateOrder;
 
-
 	function openModal () {
-      var modalInstance = addMilestone.open();
+      addMilestone.open();
 	}
 	
 	function updateOrder (orderBy) {
