@@ -23,15 +23,13 @@
         </div>
       </div>
       <div ng-show="vm.milestones.length">
-        <div class="col-md-12">
-          <table class="table">
-            <tbody>
-              <tr ng-repeat="milestone in vm.milestones">
-                <td>{{milestone.name}}</td>
-                <td>{{milestone.date}}</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="row milestone" ng-repeat="milestone in vm.milestones">
+          <div class="col-md-6">
+            <p>{{milestone.name}}</p>
+          </div>
+          <div class="col-md-6">
+            <p class="pull-right">{{milestone.date}}</p>
+          </div>
         </div>
       </div>
 	</div>
