@@ -6,16 +6,16 @@ angular.module('int1').config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'app/view/milestones/milestones.html',
     });
 
-}).controller('MilestonesCtrl', function ($scope) {
+}).controller('MilestonesCtrl', function ($scope, moment) {
     var vm = this;
 	vm.milestones = [
 		{
 			name: 'test1',
-			date: Date.now()
+			date: new moment()
 		},
 		{
 			name: 'test',
-			date: Date.now()
+			date: new moment()
 		}
 	];
 
