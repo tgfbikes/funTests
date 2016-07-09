@@ -2,10 +2,10 @@
   <div class="row top-bottom-buffer">
     <div class="col-md-6">
       <div class="btn-group" uib-dropdown is-open="dropDownStatus.isopen">
-        <button type="button" class="btn btn-primary" uib-dropdown-toggle>Order By: <span class="caret"></span></button>
+        <button type="button" class="btn btn-primary" uib-dropdown-toggle>Order By: {{vm.orderBySelect}} <span class="caret"></span></button>
 	  	<ul class="dropdown-menu" uib-dropdown-menu role="menu">
-          <li role="menuitem"><a href="#">Date</a></li>
-          <li role="menuitem"><a href="#">Name</a></li>
+          <li role="menuitem" ng-click="vm.updateOrder('date')"><a href="#">Date</a></li>
+          <li role="menuitem" ng-click="vm.updateOrder('name')"><a href="#">Name</a></li>
 		</ul>
       </div>
     </div>
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div ng-show="vm.milestones.length">
-        <div class="row milestone" ng-repeat="milestone in vm.milestones">
+        <div class="row milestone" ng-repeat="milestone in vm.milestones | orderBy: vm.orderBy">
           <div class="col-md-6">
             <p>{{milestone.name}}</p>
           </div>
