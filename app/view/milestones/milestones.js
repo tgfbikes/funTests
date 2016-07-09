@@ -22,7 +22,7 @@ angular.module('int1').config(function($stateProvider, $urlRouterProvider) {
 
 
 	function openModal() {
-		vm.milestones[0].name = 'changed';
+		addMilestone.open();
 	}
 
     var destroy = $scope.$on("$destroy", function () {
