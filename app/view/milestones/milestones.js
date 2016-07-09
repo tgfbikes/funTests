@@ -6,7 +6,7 @@ angular.module('int1').config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'app/view/milestones/milestones.html',
     });
 
-}).controller('MilestonesCtrl', function ($scope, moment) {
+}).controller('MilestonesCtrl', ['$scope', 'moment', 'addMilestone', function ($scope, moment, addMilestone ) {
     var vm = this;
 	vm.milestones = [
 		{
@@ -18,10 +18,10 @@ angular.module('int1').config(function($stateProvider, $urlRouterProvider) {
 			date: new moment()
 		}
 	];
-	vm.addMilestone = addMilestone;
+	vm.openModal = openModal;
 
 
-	function addMilestone() {
+	function openModal() {
 		vm.milestones[0].name = 'changed';
 	}
 
@@ -30,4 +30,4 @@ angular.module('int1').config(function($stateProvider, $urlRouterProvider) {
         destroy();
     });
 
-});
+}]);
