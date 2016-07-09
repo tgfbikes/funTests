@@ -6,28 +6,19 @@ angular.module('int1').config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'app/view/milestones/milestones.html',
     });
 
-}).controller('MilestonesCtrl', ['$scope', 'moment', 'addMilestone', function ($scope, moment, addMilestone ) {
+}).controller('MilestonesCtrl', ['$scope', 'addMilestone', 'milestoneService', function ($scope, addMilestone, milestoneService) {
     var vm = this;
-	vm.milestones = [
-		{
-			name: 'test1',
-			date: new moment()
-		},
-		{
-			name: 'test',
-			date: new moment()
-		}
-	];
+	vm.milestones = milestoneService.getAllMilestones();
 	vm.openModal = openModal;
 
 
 	function openModal() {
-		addMilestone.open();
+      var modalInstance = addMilestone.open();
 	}
 
     var destroy = $scope.$on("$destroy", function () {
-        //Cleanup anything that would persist beyond destruction, including $on/$watch
-        destroy();
+      //Cleanup anything that would persist beyond destruction, including $on/$watch
+      destroy();
     });
 
 }]);
