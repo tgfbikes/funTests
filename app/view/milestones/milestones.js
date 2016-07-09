@@ -18,6 +18,12 @@ angular.module('int1').config(function($stateProvider, $urlRouterProvider) {
 			date: new moment()
 		}
 	];
+	vm.addMilestone = addMilestone;
+
+
+	function addMilestone() {
+		vm.milestones[0].name = 'changed';
+	}
 
     var destroy = $scope.$on("$destroy", function () {
         //Cleanup anything that would persist beyond destruction, including $on/$watch
