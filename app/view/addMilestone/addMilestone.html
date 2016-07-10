@@ -8,7 +8,7 @@
   <div class="modal-body">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" ng-model="vm.name" ng-required="true" placeholder="Milestone Name">
-
+	<br>
     <label for="date">Date</label>
     <p class="input-group">
       <input type="text" class="form-control" id="date" uib-datepicker-popup ng-model="vm.date" is-open="vm.opened" datepicker-options="vm.dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
@@ -17,7 +17,6 @@
       </span>
     </p>
   </div>
-	<p>{{vm.date}}</p>
   <div class="modal-footer">
     <button class="btn btn-default" ng-click="$dismiss()">Cancel</button>
     <button type="button" class="btn btn-primary" ng-click="vm.saveMilestone()">Save changes</button>
