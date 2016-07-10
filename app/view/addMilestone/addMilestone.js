@@ -11,14 +11,14 @@ angular.module('int1')
           resolve: {}
         });
 
-       //  var listener = $rootScope.$on('$stateChangeStart', function () {
-			// console.log('firing');
-       //      $modalInstance.close('State Changed');
-       //  });
-      //
-       //  $modalInstance.result.then(function () {
-       //      listener();
-       //  });
+        var listener = $rootScope.$on('$stateChangeStart', function () {
+			console.log('firing');
+            $modalInstance.close('State Changed');
+        });
+      
+        $modalInstance.result.then(function () {
+            listener();
+        });
 
         return $modalInstance;
         }
@@ -43,6 +43,8 @@ angular.module('int1')
     function saveMilestone () {
       if (vm.name && vm.date) {
           milestoneService.createMilestone(vm.name, vm.date);
+		  vm.name = '';
+		  vm.date = '';
           // $uibModalInstance.close();
       }
     }
