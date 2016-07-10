@@ -1,26 +1,35 @@
-angular.module('int1')
+(function () {
+	'use strict';
+	
+	angular
+		.module('int1')
+		.factory('milestoneService', milestoneService);
 
-  .factory('milestoneService', ['moment', function(moment) {
+	milestoneService.$inject = ['moment'];
 
-    var _milestones = [];
+	function milestoneService (moment) {
 
-    var MileStone = function(name, date) {
-      this.name = name;
-      this.date = new moment(date).format('MMMM DD YYYY');
-    };
+		var _milestones = [];
 
-    var milestoneService = {
+		var MileStone = function(name, date) {
+			this.name = name;
+			this.date = new moment(date).format('MMMM DD YYYY');
+		};
 
-        createMilestone: function (name, date) {
-			var newMilestone = new MileStone(name, date);
-			_milestones.push(newMilestone);
-        },
+		var milestoneService = {
 
-		getAllMilestones: function () {
-			return _milestones;
-		}
+			createMilestone: function (name, date) {
+				var newMilestone = new MileStone(name, date);
+				_milestones.push(newMilestone);
+			},
 
-    };
+			getAllMilestones: function () {
+				return _milestones;
+			}
 
-    return milestoneService;
-}]);
+		};
+
+		return milestoneService;
+	}
+	
+}());
